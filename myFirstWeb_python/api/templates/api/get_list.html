@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+   table {
+   width: 20%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+
+    margin_right: auto;
+  }
+  th, td {
+    border: 1px solid #444444;
+    text-align: center;
+  }
+
+ </style>
+  </head>
+  <body>
+  <?php
+    $search_key = $_GET['search_key'];
+    $startYear = $_GET['startYear'];
+    $startMonthAndDay = $_GET['startMonthAndDay'];
+    $endYear = $_GET['endYear'];
+    $endMonthAndDay = $_GET['endMonthAndDay'];
+  ?>
+
+  <p>검색 키워드: {{search_key}}</p>
+  <p>시작 날짜: {{ startYear }} {{ startMonthAndDay }}</p>
+  <p>끝 날짜: {{ endYear }} {{ endMonthAndDay }}</p>
+  <!--<a href="C:/Users/ts/PycharmProjects/DjangoTest/myFirstWeb_python/wordcloud_image_generated_korea" download>DownLoad</a>-->
+   <br>
+  <table id = "show" style="border:1px solid black">
+     <tr>
+       <td>단어</td>
+       <td>횟수</td>
+     </tr>
+     {% for news in news_list %}
+    <tr>
+       <td>{{news.0}}</td>
+       <td>{{news.1}}</td>
+     </tr>
+   {% endfor %}
+   </table>
+  <!--<div>{{news_list}}</div>-->
+
+   <!--{% for i in news_list %}-->
+        <!--<p>{{news_list}}</p>-->
+    <!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+
+   <!--{% for news in news_list %}-->
+    <!--<p>{{news.0}}{{news.1}}</p>-->
+
+   <!--{% endfor %}-->
+
+
+  </body>
+</html>
